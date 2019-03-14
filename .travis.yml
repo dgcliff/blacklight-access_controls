@@ -1,6 +1,14 @@
 language: ruby
 sudo: false
 
+addons:
+  apt:
+    packages:
+      - chromium-chromedriver
+      
+before_install:
+  - google-chrome-stable --headless --disable-gpu --no-sandbox --remote-debugging-port=9222 http://localhost &
+
 notifications:
   email: false
 
@@ -16,3 +24,4 @@ global_env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 before_script:
   - jdk_switcher use oraclejdk8
+  - ln -s /usr/lib/chromium-browser/chromedriver ~/bin/chromedriver
