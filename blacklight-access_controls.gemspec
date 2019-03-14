@@ -37,4 +37,8 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'rubocop', '~> 0.52.1'
   gem.add_development_dependency 'rubocop-rspec'
   gem.add_development_dependency 'solr_wrapper'
+  gem.add_development_dependency 'rspec-rails', '~> 3.5'
+  gem.add_development_dependency 'capybara', '~> 3'
+  gem.add_development_dependency 'chromedriver-helper', '< 2.0.0' # 2.1.0 is causing "Unable to find chromedriver" on Travis
+  gem.add_development_dependency 'selenium-webdriver', '>= 3.13.1'
 end
